@@ -1,5 +1,4 @@
 @Library('jenkins-utils') _
-import utils.*
 
 pipeline {
     agent any
