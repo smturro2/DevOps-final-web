@@ -1,7 +1,7 @@
 # Docker commands
 build
 ```bash
-docker build -t devops-final-web .
+docker build -t devops-final-web .  
 ```
 
 image security scanning
