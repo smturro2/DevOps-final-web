@@ -8,14 +8,17 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react": "^7.37.5",
-    "globals": "^16.3.0"
+    "globals": "^16.3.0",
+    "jest": "^27.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
     "lint": "eslint src"
   },
   "browserslist": {
