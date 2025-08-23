@@ -6,7 +6,7 @@ function App() {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const productHost = process.env.PRODUCT_HOST || 'localhost';
+        const productHost = process.env.REACT_APP_PRODUCT_HOST || 'products';
 
         // Fetch products
         axios.get(`http://${productHost}:3001/products`)
@@ -15,7 +15,7 @@ function App() {
     }, []);
 
     const createOrder = (productId) => {
-        const orderHost = process.env.ORDER_HOST || 'localhost'
+        const orderHost = process.env.REACT_APP_ORDER_HOST || 'orders'
 
         axios.post(`http://${orderHost}:3002/orders`, {
             productId: productId,
