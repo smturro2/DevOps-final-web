@@ -55,24 +55,16 @@ pipeline {
                 }
             }
         }
-        stage('Container Push') {
+        stage('Deploy (Container Push)') {
             steps {
                 script {
-                    utils.pushDocker(
+                    utils.conditionalDeployment(
+                        env.BRANCH_NAME,
                         DOCKER_REGISTRY, 
                         DOCKER_NAME, 
                         DOCKER_TAG,
                         DOCKERHUB_CREDENTIALS_USR,
                         DOCKERHUB_CREDENTIALS_PSW,
-                    )
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                script {
-                    utils.conditionalDeployment(
-                        env.BRANCH_NAME
                     )
                 }
             }
